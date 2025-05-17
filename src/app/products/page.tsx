@@ -9,7 +9,7 @@ export default async function Page({
 }: {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
-  const { search, categories } = await searchParams;
+  const { search, categories, page } = await searchParams;
 
   const filters: getAllProductsFilters = {};
 
@@ -19,12 +19,18 @@ export default async function Page({
   if (categories && typeof categories === "string") {
     filters.categories = categories;
   }
+  if (page && typeof page === "string") {
+    filters.page = Number(page);
+  }
+
+  const suspenseKey = `${filters.search || ""}-${filters.categories || ""} ${
+    filters.page
+  }`;
 
   return (
     <section className="container mx-auto flex gap-4 py-8">
       <FilterSide />
-
-      <Suspense fallback={<CardProductsContentSkeletons />}>
+      <Suspense key={suspenseKey} fallback={<CardProductsContentSkeletons />}>
         <Content filters={filters} />
       </Suspense>
     </section>

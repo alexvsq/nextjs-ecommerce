@@ -29,12 +29,17 @@ export function CardProductsSkeletons() {
 
 export function CardProductsContentSkeletons() {
   return (
-    <div className="w-full grid grid-cols-2 md:grid-cols-3 min-h-screen">
-      <CardProductSkeleton />
-      <CardProductSkeleton />
-      <CardProductSkeleton />
-      <CardProductSkeleton />
-      <CardProductSkeleton />
+    <div className="w-full">
+      <header>
+        <h3 className="text-3xl font-bold capitalize mb-4">Loading...</h3>
+      </header>
+      <div className="w-full grid grid-cols-2 md:grid-cols-3 min-h-screen">
+        <CardProductSkeleton />
+        <CardProductSkeleton />
+        <CardProductSkeleton />
+        <CardProductSkeleton />
+        <CardProductSkeleton />
+      </div>
     </div>
   );
 }

@@ -26,7 +26,7 @@ export default async function Content({
       <header className="flex justify-between items-center py-4">
         <h3 className="text-3xl font-bold capitalize">{title}</h3>
         <p className="text-black/60">
-          Showing {res.limit} of {res.total}
+          Showing {res.skip} - {res.skip + res.limit} of {res.total}
         </p>
       </header>
       <div className="w-full grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -37,7 +37,7 @@ export default async function Content({
 
       <DivisorLine className="my-8" />
 
-      <Pagination />
+      <Pagination totalItems={res.total} />
     </section>
   );
 }

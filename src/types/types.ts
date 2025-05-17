@@ -55,6 +55,5 @@ export interface resApi {
 export interface getAllProductsFilters {
   search?: string;
   categories?: string;
-  limit?: number;
-  skip?: number;
+  page?: number;
 }

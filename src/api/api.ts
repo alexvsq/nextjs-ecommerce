@@ -27,10 +27,10 @@ export const getProductById = async (id: number) => {
       const data: ProductType = await res.json();
       return data;
     }
-    throw new Error("Error fetching product");
+    return null;
   } catch (error) {
     console.error(error);
-    throw new Error("Error fetching product");
+    return null;
   }
 };
 
@@ -52,9 +52,10 @@ export const getAllCategories = async (): Promise<string[] | null> => {
 export const getAllProducts = async ({
   search,
   categories,
-  limit = 30,
-  skip = 0,
+  page,
 }: getAllProductsFilters = {}) => {
+  const currentePage = page ? page : 1;
+  const limit = 30;
   let url = `${process.env.URL_API}/products`;
 
   if (search) {
@@ -64,9 +65,9 @@ export const getAllProducts = async ({
     url += `/category/${categories}`;
   }
   if (search) {
-    url += `&limit=${limit}&skip=${skip}`;
+    url += `&limit=${limit}&skip=${(currentePage - 1) * limit}`;
   } else {
-    url += `?limit=${limit}&skip=${skip}`;
+    url += `?limit=${limit}&skip=${(currentePage - 1) * limit}`;
   }
 
   try {

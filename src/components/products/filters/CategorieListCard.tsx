@@ -14,9 +14,11 @@ export default function CategorieListCard({ item }: { item: string }) {
   return (
     <div
       onClick={() => handleClick(item)}
-      className="flex justify-between items-center cursor-pointer"
+      className="flex justify-between items-center cursor-pointer group"
     >
-      <p className="text-black/60 capitalize">{item}</p>
+      <p className="text-black/60 group-hover:text-black transition capitalize">
+        {item}
+      </p>
       <Image
         src="/icons/arrow-category.png"
         alt="arrow-category"
