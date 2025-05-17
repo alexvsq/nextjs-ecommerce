@@ -3,7 +3,7 @@ import ReviewCard from "@/components/shared/ReviewCard";
 
 export default function ProductRatings({ Reviews }: { Reviews: ReviewType[] }) {
   return (
-    <section className="py-2">
+    <section className="py-2 px-2 md:px-0">
       <header>
         <h3 className="text-2xl font-bold">
           All Reviews{" "}

@@ -23,13 +23,13 @@ export default async function Content({
   }
   return (
     <section className="w-full">
-      <header className="flex justify-between items-center py-4">
+      <header className="flex justify-between items-center py-4 px-2 md:px-0">
         <h3 className="text-3xl font-bold capitalize">{title}</h3>
-        <p className="text-black/60">
+        <p className="text-black/60 text-sm md:text-base">
           Showing {res.skip} - {res.skip + res.limit} of {res.total}
         </p>
       </header>
-      <div className="w-full grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="w-full grid grid-cols-2 md:grid-cols-3 gap-4 px-2 md:px-0">
         {res.products.map((item, index) => {
           return <CardProduct key={index} product={item} />;
         })}

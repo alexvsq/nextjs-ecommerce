@@ -98,7 +98,7 @@ export default function Footer() {
   return (
     <section className="relative w-full mt-[100px]">
       <div className="absolute -top-[84px] w-full px-2">
-        <header className="container mx-auto flex flex-col md:flex-row gap-5 md:gap-0 justify-around items-center bg-black rounded-[20px] px-2 py-6">
+        <header className="container mx-auto flex flex-col md:flex-row gap-5 md:gap-0 justify-around items-center bg-black rounded-[20px] px-4 py-6">
           <div
             className={`${titleFont.className} text-white font-bold text-4xl md:text-[40px]`}
           >
@@ -106,7 +106,7 @@ export default function Footer() {
             <p>OUR LATEST OFFERS</p>
           </div>
 
-          <aside className=" flex flex-col gap-3 w-[349px]">
+          <aside className=" flex flex-col gap-3 w-[349px] px-2">
             <div className="bg-white rounded-full flex gap-2 items-center px-4 py-2">
               <Image
                 src="/icons/email-input.png"
@@ -128,7 +128,7 @@ export default function Footer() {
         </header>
       </div>
       <footer className="bg-black/10 flex flex-col gap-10 w-full pt-[220px] md:pt-[110px] pb-10 ">
-        <div className="container mx-auto flex flex-col md:flex-row gap-5 px-2">
+        <div className="container mx-auto flex flex-col md:flex-row gap-5 px-4 md:px-2">
           <div className="flex flex-col gap-4">
             <Logo />
             <p className="text-black/60 text-lg md:text-xs md:max-w-[30ch]">

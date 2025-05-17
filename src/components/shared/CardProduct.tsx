@@ -15,7 +15,7 @@ export default function CardProduct({ product }: { product: ProductType }) {
   return (
     <Link
       href={`/product/${product.id}`}
-      className="flex flex-col min-w-[285px] group"
+      className="flex flex-col min-w-[172px] md:min-w-[285px] group"
     >
       <header className="bg-card-image rounded-[20px] w-full aspect-square overflow-hidden">
         <Image
@@ -29,7 +29,7 @@ export default function CardProduct({ product }: { product: ProductType }) {
       <footer className="flex flex-col gap-1 py-2">
         <p className="text-lg font-bold">{titleSmall}</p>
 
-        <div className="flex gap-2 text-xl font-bold">
+        <div className="flex gap-2 flex-wrap text-lg md:text-xl font-bold">
           <p className="">${priceWithDiscount}</p>
 
           {product.discountPercentage && (

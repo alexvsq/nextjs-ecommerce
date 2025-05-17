@@ -60,7 +60,7 @@ export default function OrderSummary() {
               height={20}
             />
             <input
-              className="focus:outline-none "
+              className="focus:outline-none w-28 md:w-auto"
               type="text"
               placeholder="Promo Code"
             />

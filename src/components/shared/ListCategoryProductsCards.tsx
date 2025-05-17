@@ -14,9 +14,9 @@ export default async function ListCategoryProductsCards({
   const res = await getByCategoryWithLimit(categoryCode, limit);
 
   return (
-    <div>
+    <div className="">
       {res ? (
-        <div className="container mx-auto flex  justify-between gap-5 w-full overflow-x-auto py-10">
+        <div className="container mx-auto flex  justify-between gap-5 w-full overflow-x-auto py-10 pl-2 md:pl-0">
           {res.products.map((item: ProductType) => (
             <CardProduct key={item.id} product={item} />
           ))}

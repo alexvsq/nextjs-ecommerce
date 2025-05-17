@@ -26,8 +26,8 @@ const navItems = [
 export default function Nav() {
   return (
     <>
-      <div className="fixed z-10 w-full">
-        <div className="py-3 bg-white">
+      <div className="fixed z-10 w-full ">
+        <div className="py-2 px-2 md:py-3 bg-white">
           <nav className=" container flex justify-between items-center mx-auto h-12">
             <div className="flex gap-2 items-center">
               <Image
@@ -72,7 +72,7 @@ export default function Nav() {
 
         <DivisorLine />
       </div>
-      <div className="h-[73px] w-full" />
+      <div className="h-[67px] md:h-[73px] w-full" />
     </>
   );
 }

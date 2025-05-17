@@ -9,7 +9,7 @@ export default function Categories() {
           BROWSE BY DRESS STYLE
         </h3>
       </header>
-      <div className=" w-[90%] mx-auto h-[580px] grid grid-cols-1 md:grid-cols-3 grid-rows-4 md:grid-rows-2 gap-4">
+      <div className=" md:w-[90%] mx-auto h-[580px] grid grid-cols-1 md:grid-cols-3 grid-rows-4 md:grid-rows-2 gap-4">
         <div className="cursor-pointer col-span-1 row-span-1 rounded-[20px] bg-white overflow-hidden relative group">
           <Image
             src="/images/categories/casual.png"

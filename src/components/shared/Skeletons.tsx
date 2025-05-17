@@ -4,11 +4,11 @@ const shimmer =
 
 export function CardProductSkeleton() {
   return (
-    <article className={`min-w-[285px] w-[295px]`}>
+    <article className={`min-w-[172px] md:min-w-[285px]`}>
       <div
         className={`${shimmer} relative overflow-hidden flex flex-col gap-2`}
       >
-        <div className="bg-gray h-[241px] rounded-[20px] " />
+        <div className="bg-gray  w-full md:w-auto md:h-[241px] aspect-square rounded-[20px] " />
         <div className="bg-gray h-[40px] rounded-[10px] " />
         <div className="bg-gray w-[100px] h-[35px] rounded-[10px] " />
       </div>
@@ -33,7 +33,7 @@ export function CardProductsContentSkeletons() {
       <header>
         <h3 className="text-3xl font-bold capitalize mb-4">Loading...</h3>
       </header>
-      <div className="w-full grid grid-cols-2 md:grid-cols-3 min-h-screen">
+      <div className="w-full grid grid-cols-2 gap-3 md:grid-cols-3 min-h-screen">
         <CardProductSkeleton />
         <CardProductSkeleton />
         <CardProductSkeleton />

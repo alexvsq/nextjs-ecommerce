@@ -27,8 +27,8 @@ export default function CardItem({ product }: { product: CartProductType }) {
   };
 
   return (
-    <article className="min-h-[100px] md:h-[125px] flex justify-between items-center p-2">
-      <div className="flex gap-4">
+    <article className="h-[99px]  md:h-[125px] flex justify-between items-center p-2">
+      <div className="flex gap-4 h-full">
         <Link
           href={`/product/${product.product.id}`}
           className="h-full aspect-square rounded-[20px] bg-gray"
@@ -41,7 +41,7 @@ export default function CardItem({ product }: { product: CartProductType }) {
             className="w-full h-full object-cover"
           />
         </Link>
-        <div className=" flex flex-col gap-1">
+        <div className=" flex flex-col md:gap-1">
           <p className="md:text-lg font-bold">{product.product.title}</p>
           <div className="text-xs md:text-sm text-black">
             <p>

@@ -34,9 +34,9 @@ export default function Hero() {
   return (
     <div className="bg-hero w-full md:h-screen flex flex-col pt-5">
       <div className="container mx-auto w-full flex flex-col md:flex-1 md:flex-row">
-        <aside className=" flex flex-col justify-center gap-4 px-2 md:w-[60%]">
+        <aside className=" flex flex-col justify-center gap-4 px-2 text-center md:text-start md:w-[60%]">
           <article
-            className={`${titleFont.className} text-6xl font-bold tracking-wide md:tracking-widest`}
+            className={`${titleFont.className} text-5xl md:text-6xl font-bold tracking-wide md:tracking-widest`}
           >
             <p>FIND CLOTHES</p>
             <p>THAT MATCHES</p>

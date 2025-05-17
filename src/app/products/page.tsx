@@ -28,7 +28,7 @@ export default async function Page({
   }`;
 
   return (
-    <section className="container mx-auto flex gap-4 py-8">
+    <section className="container mx-auto flex gap-4 py-2 md:py-8">
       <FilterSide />
       <Suspense key={suspenseKey} fallback={<CardProductsContentSkeletons />}>
         <Content filters={filters} />

@@ -53,7 +53,7 @@ export default function Pagination({ totalItems }: { totalItems: number }) {
   };
 
   return (
-    <section className="flex justify-between items-center">
+    <section className="flex justify-between flex-col md:flex-row gap-6 md:gap-0 items-center">
       <button
         onClick={() => handleClick(Math.max(currentPage - 1, 1))}
         disabled={currentPage === 1}
