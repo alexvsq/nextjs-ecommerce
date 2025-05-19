@@ -2,6 +2,7 @@
 import DivisorLine from "@/components/shared/DivisorLine";
 import Image from "next/image";
 import { useCartStore } from "@/stores/cartStore";
+import NumberFlow from "@number-flow/react";
 
 export default function OrderSummary() {
   const { cartItems } = useCartStore();
@@ -48,7 +49,17 @@ export default function OrderSummary() {
       <footer className="flex flex-col gap-4 py-2">
         <div className="flex justify-between items-center">
           <p className="text-black text-lg">Total</p>
-          <p className="text-black text-xl font-bold">${total.toFixed(2)}</p>
+          <p className="text-black text-xl font-bold">
+            {/* ${total.toFixed(2)} */}
+            <NumberFlow
+              value={total}
+              format={{
+                style: "currency",
+                currency: "USD",
+                trailingZeroDisplay: "stripIfInteger",
+              }}
+            />
+          </p>
         </div>
 
         <div className="flex gap-2 ">

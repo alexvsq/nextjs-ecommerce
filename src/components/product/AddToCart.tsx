@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { useShoppingCart } from "@/hooks/useShoppingCart";
 import toast from "react-hot-toast";
+import NumberFlow from "@number-flow/react";
 
 export default function AddToCart({ product }: { product: ProductType }) {
   const { addToCart } = useShoppingCart();
@@ -33,7 +34,9 @@ export default function AddToCart({ product }: { product: ProductType }) {
           className="cursor-pointer"
         />
         <div className="flex justify-center items-center min-w-[25px]">
-          <p>{itemCount}</p>
+          <p>
+            <NumberFlow value={itemCount} />
+          </p>
         </div>
         <Image
           onClick={handlePlus}
