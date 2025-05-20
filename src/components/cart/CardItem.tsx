@@ -4,9 +4,10 @@ import Image from "next/image";
 import { useShoppingCart } from "@/hooks/useShoppingCart";
 import toast from "react-hot-toast";
 import Link from "next/link";
+import NumberFlow from "@number-flow/react";
 
 export default function CardItem({ product }: { product: CartProductType }) {
-  const { removeFromCart } = useShoppingCart();
+  const { removeFromCart, updateQuantity } = useShoppingCart();
 
   const priceWithDiscount = product.product.discountPercentage
     ? (
@@ -15,15 +16,18 @@ export default function CardItem({ product }: { product: CartProductType }) {
       ).toFixed(2)
     : product.product.price;
 
-  console.log(
-    product.product.price,
-    product.product.discountPercentage,
-    priceWithDiscount
-  );
-
   const handleTrashBtn = () => {
     const result = removeFromCart(product.product.id);
     toast.success(result);
+  };
+
+  const handleMinus = () => {
+    const newQuantity = product.quantity > 1 ? product.quantity - 1 : 1;
+    updateQuantity(product.product.id, newQuantity);
+  };
+  const handlePlus = () => {
+    const newQuantity = product.quantity + 1;
+    updateQuantity(product.product.id, newQuantity);
   };
 
   return (
@@ -31,14 +35,14 @@ export default function CardItem({ product }: { product: CartProductType }) {
       <div className="flex gap-4 h-full">
         <Link
           href={`/product/${product.product.id}`}
-          className="h-full aspect-square rounded-[20px] bg-gray"
+          className="h-full aspect-square rounded-[20px] bg-gray group"
         >
           <Image
             src={product.product.thumbnail}
             alt={product.product.title}
             width={124}
             height={124}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover group-hover:scale-105 transition"
           />
         </Link>
         <div className=" flex flex-col md:gap-1">
@@ -77,9 +81,28 @@ export default function CardItem({ product }: { product: CartProductType }) {
           />
         </div>
 
-        <footer className="flex flex-col md:flex-row items-center gap-2 text-sm">
-          <p className="text-black">Quantity:</p>
-          <p className="bg-gray px-4 py-1 rounded-full">{product.quantity}</p>
+        <footer className="bg-gray rounded-full flex items-center gap-4 px-4 py-2">
+          <Image
+            onClick={handleMinus}
+            src="/icons/minus.png"
+            alt="cart"
+            width={16}
+            height={16}
+            className="cursor-pointer"
+          />
+          <div className="flex justify-center items-center min-w-[25px]">
+            <p>
+              <NumberFlow value={product.quantity} />
+            </p>
+          </div>
+          <Image
+            onClick={handlePlus}
+            src="/icons/plus.png"
+            alt="cart"
+            width={16}
+            height={16}
+            className="cursor-pointer"
+          />
         </footer>
       </aside>
     </article>

@@ -22,7 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${interFont.className} antialiased`}>
+      <body
+        className={`${interFont.className} antialiased bg-background text-black`}
+      >
         <Nav />
         {children}
         <Footer />

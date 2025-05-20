@@ -3,25 +3,8 @@ import Logo from "@/components/shared/Logo";
 import DivisorLine from "@/components/shared/DivisorLine";
 import SearchInput from "@/components/Nav/SearchInput";
 import ShoppingCartBtn from "@/components/Nav/ShoppingCartBtn";
-
-const navItems = [
-  {
-    name: "Show",
-    path: "/",
-  },
-  {
-    name: "On Sale",
-    path: "/",
-  },
-  {
-    name: "New Arrivals",
-    path: "/",
-  },
-  {
-    name: "Brands",
-    path: "/",
-  },
-];
+import MenuMobile from "@/components/Nav/MenuMobile";
+import NavButtons from "@/components/Nav/NavButtons";
 
 export default function Nav() {
   return (
@@ -30,23 +13,11 @@ export default function Nav() {
         <div className="py-2 px-2 md:py-3 bg-white">
           <nav className=" container flex justify-between items-center mx-auto h-12">
             <div className="flex gap-2 items-center">
-              <Image
-                src="/icons/menu-mobile.png"
-                alt="menu-mobile"
-                width={24}
-                height={24}
-                className="cursor-pointer md:hidden "
-              />
+              <MenuMobile />
               <Logo />
             </div>
 
-            <ul className="hidden md:flex gap-3">
-              {navItems.map((item, index) => (
-                <li key={index}>
-                  <p>{item.name}</p>
-                </li>
-              ))}
-            </ul>
+            <NavButtons />
 
             <SearchInput />
 

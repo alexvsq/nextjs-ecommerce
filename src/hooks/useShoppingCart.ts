@@ -41,5 +41,18 @@ export function useShoppingCart() {
     return "All products removed from cart";
   };
 
-  return { addToCart, removeFromCart, removeAllFromCart };
+  const updateQuantity = (id: number, quantity: number) => {
+    const newCartItems = cartItems.map((item) => {
+      if (item.product.id === id) {
+        return {
+          ...item,
+          quantity,
+        };
+      }
+      return item;
+    });
+    setCartItems(newCartItems);
+  };
+
+  return { addToCart, removeFromCart, removeAllFromCart, updateQuantity };
 }

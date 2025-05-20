@@ -32,11 +32,16 @@ export default function OrderSummary() {
       <article className="flex flex-col gap-4">
         <div className="flex justify-between items-center">
           <p className="text-black/60 text-lg">Subtotal</p>
-          <p className="text-black text-lg font-bold">${subTotal.toFixed(2)}</p>
+          <p className="text-black text-lg font-bold">
+            $<NumberFlow value={subTotal} />
+          </p>
         </div>
         <div className="flex justify-between items-center">
           <p className="text-black/60 text-lg">Discount (-5%)</p>
-          <p className="text-red text-lg font-bold">-${discount.toFixed(2)}</p>
+          <p className="text-red text-lg font-bold">
+            -$
+            <NumberFlow value={discount} />
+          </p>
         </div>
         <div className="flex justify-between items-center">
           <p className="text-black/60 text-lg">Delivery Fee</p>
