@@ -9,6 +9,11 @@ import NumberFlow from "@number-flow/react";
 export default function CardItem({ product }: { product: CartProductType }) {
   const { removeFromCart, updateQuantity } = useShoppingCart();
 
+  const smallTitle =
+    product.product.title.length > 13
+      ? product.product.title.slice(0, 13) + "..."
+      : product.product.title;
+
   const priceWithDiscount = product.product.discountPercentage
     ? (
         product.product.price *
@@ -46,7 +51,10 @@ export default function CardItem({ product }: { product: CartProductType }) {
           />
         </Link>
         <div className=" flex flex-col md:gap-1">
-          <p className="md:text-lg font-bold">{product.product.title}</p>
+          <p className="block md:hidden md:text-lg font-bold">{smallTitle}</p>
+          <p className="hidden md:block md:text-lg font-bold">
+            {product.product.title}
+          </p>
           <div className="text-xs md:text-sm text-black">
             <p>
               Brand:{" "}

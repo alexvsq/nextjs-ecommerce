@@ -30,11 +30,13 @@ export default function CardProduct({ product }: { product: ProductType }) {
         <p className="text-lg font-bold">{titleSmall}</p>
 
         <div className="flex gap-2 flex-wrap text-lg md:text-xl font-bold">
-          <p className="">${priceWithDiscount}</p>
+          <p className="">${priceWithDiscount.toLocaleString()}</p>
 
           {product.discountPercentage && (
             <div className="flex items-center gap-2">
-              <p className="text-black/40 line-through">${product.price}</p>
+              <p className="text-black/40 line-through">
+                ${product.price.toLocaleString()}
+              </p>
               <p className="bg-red/10 text-red px-2 py-1 rounded-full text-xs font-light">
                 -{product.discountPercentage}%
               </p>
