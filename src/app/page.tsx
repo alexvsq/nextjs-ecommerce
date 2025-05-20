@@ -8,9 +8,9 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      <NewArrivals />
-      <DivisorLine />
       <TopSelling />
+      <DivisorLine />
+      <NewArrivals />
       <Categories />
     </div>
   );
