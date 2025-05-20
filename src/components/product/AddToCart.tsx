@@ -65,14 +65,14 @@ export default function AddToCart({ product }: { product: ProductType }) {
       <div className="flex gap-1 flex-1">
         <button
           onClick={handleAddToCart}
-          className=" bg-black rounded-full text-white cursor-pointer flex flex-1 justify-center items-center"
+          className=" bg-black rounded-full text-white cursor-pointer  flex-1 justify-center items-center"
         >
           Add to Cart
         </button>
         {isInCart && (
           <button
             onClick={handleRemoveFromCart}
-            className=" bg-red rounded-full text-white cursor-pointer flex flex-1 justify-center items-center"
+            className=" bg-red rounded-full text-white cursor-pointer hidden md:flex flex-1 justify-center items-center"
           >
             Delete from Cart
           </button>

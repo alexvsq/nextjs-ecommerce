@@ -53,6 +53,20 @@ export default function Hero() {
               height={600}
             />
           </div>
+          <Image
+            src="/images/star-hero.png"
+            alt="hero-image"
+            width={1000}
+            height={600}
+            className="w-20 h-20 absolute top-5 right-5"
+          />
+          <Image
+            src="/images/star-hero.png"
+            alt="hero-image"
+            width={1000}
+            height={600}
+            className="w-15 h-15 absolute bottom-1/2 left-0"
+          />
         </div>
       </div>
       <LogosBrands />
