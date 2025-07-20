@@ -6,7 +6,7 @@ import LogosBrands from "@/components/home/hero/LogosBrands";
 
 export default function Hero() {
   return (
-    <div className="bg-hero w-full md:h-[95vh] flex flex-col pt-5">
+    <div className="bg-hero w-full md:h-[663px] flex flex-col pt-5">
       <div className="container mx-auto w-full flex flex-col md:flex-1 md:flex-row">
         <aside className=" flex flex-col justify-center gap-4 px-2 text-center md:text-start md:w-[60%]">
           <article
@@ -44,13 +44,13 @@ export default function Hero() {
         </aside>
 
         <div className="md:w-[40%] h-full w-full  relative overflow-hidden">
-          <div className="md:absolute md:top-0 right-0 w-full h-full">
+          <div className="md:absolute md:bottom-0 right-0 w-full h-full">
             <Image
-              className="w-full h-full object-cover object-top "
+              className="w-full h-full object-contain"
               src="/images/hero.png"
               alt="hero-image"
               width={1000}
-              height={600}
+              height={700}
             />
           </div>
           <Image
