@@ -16,9 +16,9 @@ export default function CardItem({ product }: { product: CartProductType }) {
 
   const priceWithDiscount = product.product.discountPercentage
     ? (
-        product.product.price *
-        (1 - product.product.discountPercentage / 100)
-      ).toFixed(2)
+      product.product.price *
+      (1 - product.product.discountPercentage / 100)
+    )
     : product.product.price;
 
   const handleTrashBtn = () => {
@@ -68,7 +68,7 @@ export default function CardItem({ product }: { product: CartProductType }) {
 
           <footer className="flex items-center gap-2">
             <p className="text-base md:text-xl font-bold">
-              ${priceWithDiscount}
+              ${priceWithDiscount.toLocaleString()}
             </p>
             {product.product.discountPercentage && (
               <p className="bg-red/10 text-red px-2 py-1 rounded-full text-xs font-light">
