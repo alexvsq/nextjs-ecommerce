@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function InfoSideProduct({ product }: { product: ProductType }) {
   const priceWithDiscount = product.discountPercentage
-    ? (product.price * (1 - product.discountPercentage / 100)).toFixed(2)
+    ? (product.price * (1 - product.discountPercentage / 100))
     : product.price;
 
   return (
@@ -20,14 +20,14 @@ export default function InfoSideProduct({ product }: { product: ProductType }) {
         <p className=" text-sm text-black/60">{product.brand}</p>
         <Image src="/icons/rating.png" alt="rating" width={180} height={22} />
         <div className="flex gap-2 flex-wrap items-center">
-          <p className="text-2xl font-bold">${priceWithDiscount}</p>
+          <p className="text-2xl font-bold">${priceWithDiscount.toLocaleString()}</p>
           {product.discountPercentage && (
             <>
               <p className="text-black/40 text-2xl line-through">
-                ${product.price}
+                ${product.price.toLocaleString()}
               </p>
               <p className="bg-red/10 text-red px-2 py-1 rounded-full text-lg font-light">
-                -{product.discountPercentage}%
+                -{product.discountPercentage.toLocaleString()}%
               </p>
             </>
           )}
