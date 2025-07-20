@@ -5,7 +5,7 @@ import { Suspense } from "react";
 
 export default function FilterSide() {
   return (
-    <aside className="hidden md:block min-w-[285px] max-w-[290px] h-fit border border-black/10 rounded-[20px] p-4">
+    <aside className="hidden lg:block min-w-[285px] max-w-[290px] h-fit border border-black/10 rounded-[20px] p-4">
       <header className="flex justify-between items-center">
         <p className="text-lg font-bold">Filters</p>
         <Image src="/icons/filters.png" alt="filters" width={24} height={24} />

@@ -15,8 +15,8 @@ export default async function Content({
   const title = filters.categories
     ? filters.categories.replaceAll("-", " ")
     : filters.search
-    ? 'Results for "' + filters.search + '"'
-    : "All Products";
+      ? 'Results for "' + filters.search + '"'
+      : "All Products";
 
   if (!res) {
     notFound();
@@ -29,7 +29,7 @@ export default async function Content({
           Showing {res.skip} - {res.skip + res.limit} of {res.total}
         </p>
       </header>
-      <div className="w-full grid grid-cols-2 md:grid-cols-3 gap-4 px-2 md:px-0">
+      <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-2 md:px-0">
         {res.products.map((item, index) => {
           return <CardProduct key={index} product={item} />;
         })}

@@ -10,7 +10,7 @@ export default function TopSelling() {
     <section className=" py-4 px-2">
       <TitleSection title="Top Selling" />
       <Suspense fallback={<CardProductsSkeletons />}>
-        <ListCategoryProductsCards categoryCode="mens-watches" limit={4} />
+        <ListCategoryProductsCards categoryCode="mens-watches" limit={5} />
       </Suspense>
 
       <footer className=" flex justify-center items-center py-5">

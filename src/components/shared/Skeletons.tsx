@@ -33,7 +33,8 @@ export function CardProductsContentSkeletons() {
       <header>
         <h3 className="text-3xl font-bold capitalize mb-4">Loading...</h3>
       </header>
-      <div className="w-full grid grid-cols-2 gap-3 md:grid-cols-3 min-h-screen">
+      <div className="w-full grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4 min-h-screen">
+        <CardProductSkeleton />
         <CardProductSkeleton />
         <CardProductSkeleton />
         <CardProductSkeleton />

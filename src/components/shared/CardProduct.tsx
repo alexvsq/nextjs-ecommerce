@@ -9,13 +9,13 @@ export default function CardProduct({ product }: { product: ProductType }) {
       : product.title;
 
   const priceWithDiscount = product.discountPercentage
-    ? (product.price * (1 - product.discountPercentage / 100)).toFixed(2)
+    ? (product.price * (1 - product.discountPercentage / 100))
     : product.price;
 
   return (
     <Link
       href={`/product/${product.id}`}
-      className="flex flex-col min-w-[172px] md:min-w-[285px] group"
+      className="flex flex-col w-full group min-w-[165px]"
     >
       <header className="bg-card-image rounded-[20px] w-full aspect-square overflow-hidden">
         <Image
@@ -26,8 +26,8 @@ export default function CardProduct({ product }: { product: ProductType }) {
           className="w-full h-full object-cover object-top group-hover:scale-105 transition"
         />
       </header>
-      <footer className="flex flex-col gap-1 py-2">
-        <p className="text-lg font-bold">{titleSmall}</p>
+      <footer className="flex flex-col md:gap-1 py-2">
+        <p className="md:text-lg font-bold">{titleSmall}</p>
 
         <div className="flex gap-2 flex-wrap text-lg md:text-xl font-bold">
           <p className="">${priceWithDiscount.toLocaleString()}</p>
